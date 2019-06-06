@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+          body {
+            font-family: sans-serif;
+          }
+        </style>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+      <div class="container">
+        <div class="row no-gutters">
+          <h1>Settings</h1>
+          <p>Current selection: <div id="current-selection"></div></p>
+
+          <div class="row col-12 mb-3">
+            <select id="team" class="custom-select col-12">
+              <option value="blue" selected>blue</option>
+              <option value="red">red</option>
+            </select>
+            <select id="q" class="custom-select col-3">
+              <option value="bullet" selected>Bullet</option>
+              <option value="freeze">Freeze Bullet</option>
+              <option value="flash">Flash (teleport)</option>
+              <option value="rocket">Rocket</option>
+              <option value="shotgun">Shotgun</option>
+              <option value="speedBoost">Speed Boost</option>
+              <option value="spitRoast">Return Orb</option>
+              <option value="forcefieldBullet">Forcefield Bullet</option>
+              <option value="forcefield">Forcefield</option>
+              <option value="growBall">Grow Ball</option>
+            </select>
+            <select id="w" class="custom-select col-3">
+              <option value="bullet">Bullet</option>
+              <option value="freeze" selected>Freeze Bullet</option>
+              <option value="flash">Flash (teleport)</option>
+              <option value="rocket">Rocket</option>
+              <option value="shotgun">Shotgun</option>
+              <option value="speedBoost">speedBoost</option>
+              <option value="spitRoast">Return Orb</option>
+              <option value="forcefieldBullet">Forcefield Bullet</option>
+              <option value="forcefield">Forcefield</option>
+              <option value="growBall">Grow Ball</option>
+            </select>
+            <select id="e" class="custom-select col-3">
+              <option value="bullet">Bullet</option>
+              <option value="freeze">Freeze Bullet</option>
+              <option value="flash" selected>Flash (teleport)</option>
+              <option value="rocket">Rocket</option>
+              <option value="shotgun">Shotgun</option>
+              <option value="speedBoost">speedBoost</option>
+              <option value="spitRoast">Return Orb</option>
+              <option value="forcefieldBullet">Forcefield Bullet</option>
+              <option value="forcefield">Forcefield</option>
+              <option value="growBall">Grow Ball</option>
+            </select>
+            <select id="r" class="custom-select col-3">
+              <option value="bullet">Bullet</option>
+              <option value="freeze">Freeze Bullet</option>
+              <option value="flash">Flash (teleport)</option>
+              <option value="rocket" selected>Rocket</option>
+              <option value="shotgun">Shotgun</option>
+              <option value="speedBoost">speedBoost</option>
+              <option value="spitRoast">Return Orb</option>
+              <option value="forcefieldBullet">Forcefield Bullet</option>
+              <option value="forcefield">Forcefield</option>
+              <option value="growBall">Grow Ball</option>
+            </select>
+
+            <button onclick="save()" type="button" style="margin: 0 auto" class="btn">save</button>
+
+          </div>
+
+          <div class="row col-12 no-gutters">
+
+            <div class="col-3 bg-light mb-3 card">
+              <div class="card-header">Bullet</div>
+              <div class="card-body">
+                <dl class="row">
+                  <p class="col-sm-12">A small, fast bullet</p>
+
+                  <dt class="col-sm-5">Cooldown</dt>
+                  <dd class="col-sm-7">2.5 seconds</dd>
+
+                  <dt class="col-sm-5">Damage</dt>
+                  <dd class="col-sm-7">25</dd>
+
+                  <dt class="col-sm-5">Width</dt>
+                  <dd class="col-sm-7">Very Small (8 units)</dd>
+
+                  <dt class="col-sm-5">Speed</dt>
+                  <dd class="col-sm-7">Fast (720 units/second)</dd>
+
+                  <dt class="col-sm-5">Range</dt>
+                  <dd class="col-sm-7">Far (1008 units)</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="col-3 bg-light mb-3 card">
+              <div class="card-header">Freeze Bullet</div>
+              <div class="card-body">
+                <dl class="row">
+                  <p class="col-sm-12">A small, medium speed bullet that freezes another player on hit</p>
+
+                  <dt class="col-sm-5">Cooldown</dt>
+                  <dd class="col-sm-7">3 seconds</dd>
+
+                  <dt class="col-sm-5">Damage</dt>
+                  <dd class="col-sm-7">10</dd>
+
+                  <dt class="col-sm-5">Width</dt>
+                  <dd class="col-sm-7">Small (16 units)</dd>
+
+                  <dt class="col-sm-5">Speed</dt>
+                  <dd class="col-sm-7">Medium (540 units/second)</dd>
+
+                  <dt class="col-sm-5">Range</dt>
+                  <dd class="col-sm-7">Far (1080 units)</dd>
+
+                  <dt class="col-sm-5">Stun Time</dt>
+                  <dd class="col-sm-7">2 seconds</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="col-3 bg-light mb-3 card">
+              <div class="card-header">Flash</div>
+              <div class="card-body">
+                <dl class="row">
+                  <p class="col-sm-12">A teleportation spell with a certain range that allows you to jump to your mouse coordinates. </p>
+
+                  <dt class="col-sm-5">Cooldown</dt>
+                  <dd class="col-sm-7">7.5 seconds</dd>
+
+                  <dt class="col-sm-5">Range</dt>
+                  <dd class="col-sm-7">Close (200 units)</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="col-3 bg-light mb-3 card">
+              <div class="card-header">Rocket</div>
+              <div class="card-body">
+                <dl class="row">
+                  <p class="col-sm-12">A large, fast, high damage projectile</p>
+
+                  <dt class="col-sm-5">Cooldown</dt>
+                  <dd class="col-sm-7">6 seconds</dd>
+
+                  <dt class="col-sm-5">Damage</dt>
+                  <dd class="col-sm-7">30</dd>
+
+                  <dt class="col-sm-5">Width</dt>
+                  <dd class="col-sm-7">Large (64 units)</dd>
+
+                  <dt class="col-sm-5">Speed</dt>
+                  <dd class="col-sm-7">Very Fast (1080 units/second)</dd>
+
+                  <dt class="col-sm-5">Range</dt>
+                  <dd class="col-sm-7">Very Far (2160 units)</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="col-3 bg-light mb-3 card">
+              <div class="card-header">Shotgun</div>
+              <div class="card-body">
+                <dl class="row">
+                  <p class="col-sm-12">A short range, fast burst of projectile in a cone shape</p>
+
+                  <dt class="col-sm-5">Cooldown</dt>
+                  <dd class="col-sm-7">5 seconds</dd>
+
+                  <dt class="col-sm-5">Damage per bullet</dt>
+                  <dd class="col-sm-7">8</dd>
+
+                  <dt class="col-sm-5"># of Bullets</dt>
+                  <dd class="col-sm-7">8</dd>
+
+                  <dt class="col-sm-5">Spread angle</dt>
+                  <dd class="col-sm-7">36 degrees</dd>
+
+                  <dt class="col-sm-5">Width</dt>
+                  <dd class="col-sm-7">Very small (8 units)</dd>
+
+                  <dt class="col-sm-5">Speed</dt>
+                  <dd class="col-sm-7">Very Fast (1500 units/second)</dd>
+
+                  <dt class="col-sm-5">Range</dt>
+                  <dd class="col-sm-7">Very Close (225 units)</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="col-3 bg-light mb-3 card">
+              <div class="card-header">Speed Boost</div>
+              <div class="card-body">
+                <dl class="row">
+                  <p class="col-sm-12">Temporary speed boost</p>
+
+                  <dt class="col-sm-5">Cooldown</dt>
+                  <dd class="col-sm-7">8 seconds</dd>
+
+                  <dt class="col-sm-5">Duration</dt>
+                  <dd class="col-sm-7">2.5 seconds</dd>
+
+                  <dt class="col-sm-5">Speed multiplier</dt>
+                  <dd class="col-sm-7">x2</dd>
+                </div>
+              </div>
+
+              <div class="col-3 bg-light mb-3 card">
+                <div class="card-header">Return Orb</div>
+                <div class="card-body">
+                  <dl class="row">
+                  <p class="col-sm-12">A fast, medium sized orb that returns to you for large damage</p>
+
+                  <dt class="col-sm-5">Cooldown</dt>
+                  <dd class="col-sm-7">4 seconds</dd>
+
+                  <dt class="col-sm-5">Damage</dt>
+                  <dd class="col-sm-7">10 on cast, 75 on return</dd>
+
+                  <dt class="col-sm-5">Width</dt>
+                  <dd class="col-sm-7">Large (48 units)</dd>
+
+                  <dt class="col-sm-5">Speed</dt>
+                  <dd class="col-sm-7">Fast (780 units/second)</dd>
+
+                  <dt class="col-sm-5">Range</dt>
+                  <dd class="col-sm-7">Medium-Far (780 units)</dd>
+
+                  <dt class="col-sm-5">Special Ability</dt>
+                  <dd class="col-sm-7">After 1 second, returns to the shooter and damage increases to 75</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="col-3 bg-light mb-3 card">
+              <div class="card-header">Forcefield Bullet</div>
+              <div class="card-body">
+                <dl class="row">
+                  <p class="col-sm-12">3 short lasting bullet that destorys other projecetiles</p>
+
+                  <dt class="col-sm-5">Cooldown</dt>
+                  <dd class="col-sm-7">6 seconds</dd>
+
+                  <dt class="col-sm-5">Width</dt>
+                  <dd class="col-sm-7">Medium (24 units)</dd>
+
+                  <dt class="col-sm-5">Spread angle</dt>
+                  <dd class="col-sm-7">60 degrees</dd>
+
+                  <dt class="col-sm-5">Speed</dt>
+                  <dd class="col-sm-7">Medium (300 units/second)</dd>
+
+                  <dt class="col-sm-5">Range</dt>
+                  <dd class="col-sm-7">Close (210 units)</dd>
+
+                  <dt class="col-sm-5">Special Ability</dt>
+                  <dd class="col-sm-7">Destroys projectiles that it comes in contact with</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="col-3 bg-light mb-3 card">
+              <div class="card-header">Forcefield</div>
+              <div class="card-body">
+                <dl class="row">
+                  <p class="col-sm-12">A short lasting forcefield that surrounds you and destroys projcetiles</p>
+
+                  <dt class="col-sm-5">Cooldown</dt>
+                  <dd class="col-sm-7">6 seconds</dd>
+
+                  <dt class="col-sm-5">Length</dt>
+                  <dd class="col-sm-7">0.35 seconds</dd>
+
+                  <dt class="col-sm-5">Special Ability</dt>
+                  <dd class="col-sm-7">Destroys projectiles that it comes in contact with</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="col-3 bg-light mb-3 card">
+              <div class="card-header">Grow Ball</div>
+              <div class="card-body">
+                <dl class="row">
+                  <p class="col-sm-12">A ball that grows around you and does more damage as time goes on.</p>
+
+                  <dt class="col-sm-5">Cooldown</dt>
+                  <dd class="col-sm-7">6 seconds</dd>
+
+                  <dt class="col-sm-5">Width</dt>
+                  <dd class="col-sm-7">Medium (24 units, Max: 40 units)</dd>
+
+                  <dt class="col-sm-5">Damage</dt>
+                  <dd class="col-sm-7">15 (Max: 65)</dd>
+
+                  <dt class="col-sm-5">Duration</dt>
+                  <dd class="col-sm-7">2 seconds</dd>
+
+                  <dt class="col-sm-5">Special Ability</dt>
+                  <dd class="col-sm-7">50% damage reduction during the duration and grows in size as it follows you</dd>
+                </dl>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.15.1/phaser.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+      <script src="../js/settings.js"></script>
+    </body>
+
+</html>
