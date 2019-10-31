@@ -271,6 +271,18 @@ function addPlayer(self, playerInfo) {
       break;
     case "red":
       self.player.setTint(0xff0000);
+      break
+    case "orange":
+      self.player.setTint(0xffa500);
+      break;
+    case "yellow":
+      self.player.setTint(0xffff00);
+      break;
+    case "green":
+      self.player.setTint(0x00ff00);
+      break;
+    case "purple":
+      self.player.setTint(0x800080);
   }
 
   //copy playerInfo data to self.player
@@ -294,10 +306,22 @@ function addOtherPlayers(self, playerInfo) {
 
   switch(playerInfo.team) {
     case "blue":
-      otherPlayer.setTint(0x0000ff);
+      self.player.setTint(0x0000ff);
       break;
     case "red":
-      otherPlayer.setTint(0xff0000);
+      self.player.setTint(0xff0000);
+      break;
+    case "orange":
+      self.player.setTint(0xffa500);
+      break;
+    case "yellow":
+      self.player.setTint(0xffff00);
+      break;
+    case "green":
+      self.player.setTint(0x00ff00);
+      break;
+    case "purple":
+      self.player.setTint(0x800080);
   }
 
   otherPlayer.playerId = playerInfo.playerId;
