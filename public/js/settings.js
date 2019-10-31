@@ -5,9 +5,16 @@ if(Cookies.get('q') == undefined) {
   Cookies.set('w', "freeze");
   Cookies.set('e', "flash");
   Cookies.set('r', "rocket");
+} else {
+  $('#team').val(Cookies.get('team'));
+  $('#q').val(Cookies.get('q'));
+  $('#w').val(Cookies.get('w'));
+  $('#e').val(Cookies.get('e'));
+  $('#r').val(Cookies.get('r'));
 }
 
 $('#current-selection').html("Team:" + Cookies.get('team') +"Q: " + Cookies.get('q') + " W: " + Cookies.get('w') + " E: " + Cookies.get('e') + " R: " + Cookies.get('r') );
+
 
 function save() {
   Cookies.set('team', $('#team').val());
