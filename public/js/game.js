@@ -306,22 +306,22 @@ function addOtherPlayers(self, playerInfo) {
 
   switch(playerInfo.team) {
     case "blue":
-      self.player.setTint(0x0000ff);
+      otherPlayer.setTint(0x0000ff);
       break;
     case "red":
-      self.player.setTint(0xff0000);
+      otherPlayer.setTint(0xff0000);
       break;
     case "orange":
-      self.player.setTint(0xffa500);
+      otherPlayer.setTint(0xffa500);
       break;
     case "yellow":
-      self.player.setTint(0xffff00);
+      otherPlayer.setTint(0xffff00);
       break;
     case "green":
-      self.player.setTint(0x00ff00);
+      otherPlayer.setTint(0x00ff00);
       break;
     case "purple":
-      self.player.setTint(0x800080);
+      otherPlayer.setTint(0x800080);
   }
 
   otherPlayer.playerId = playerInfo.playerId;
